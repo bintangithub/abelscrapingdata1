@@ -1,6 +1,7 @@
 import re 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+import pandas as pd
 
 pointer=0
 dataulti = {
@@ -53,14 +54,8 @@ for gaji in listgaji:
     print(pekerjaan)
     pointer+=1
     
-        
-    
-
-# for link in listlink:
-#     print(link.get_attribute('href'))
-
-
-
+pd.DataFrame(dataulti).to_csv('Pekerjaan Data Analyst.csv')
+print('\n Done Scrapping')
 
 
 

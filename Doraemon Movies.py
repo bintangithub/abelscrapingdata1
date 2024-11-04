@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+import pandas as pd
 
 driverPath = r"D:\Setelah Kuliah\Belajar\Belajar Data Science\Scraping\edgedriver_win64\msedgedriver.exe"
 edgeOptions = webdriver.EdgeOptions()
@@ -46,12 +47,10 @@ for movie in movies:
     element = browser.find_element(By.XPATH, dateXPATH)
     releaseDate.append(element.text)
     print(element.text)
-    
-    
-    
 
 
-
+pd.DataFrame({'Movie':movies,'Date':releaseDate}).to_csv('doraemon_movies.csv')
+print("\n Scrapping Done")
 
 
 
